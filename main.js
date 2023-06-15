@@ -41,7 +41,7 @@ function checkWebsiteStatus(website) {
       consecutiveRTOCount[website.name]++;
       console.log(new Date().toLocaleString(),`${website.name} => Cek...!!!! Cek...!!!!`);
       if (consecutiveRTOCount[website.name] >= rtoThreshold) {
-       // playNotificationSound();
+        playNotificationSound();
         sendTelegramNotification(website);
       }
     }
@@ -49,20 +49,20 @@ function checkWebsiteStatus(website) {
     consecutiveRTOCount[website.name]++;
     console.log(new Date().toLocaleString(), `${website.name} => Cek...!!!! Cek...!!!!`);
     if (consecutiveRTOCount[website.name] >= rtoThreshold) {
-     // playNotificationSound();
+      playNotificationSound();
       sendTelegramNotification(website);
     }
   });
 }
 
 // untuk play notifikasi suara
-// function playNotificationSound() {
-//   player.play(notificationSoundPath, (err) => {
-//     if (err) {
-//       console.log('Error playing sound:', err);
-//     }
-//   });
-// }
+function playNotificationSound() {
+  player.play(notificationSoundPath, (err) => {
+    if (err) {
+      console.log('Error playing sound:', err);
+    }
+  });
+}
 
 // untuk kirim notifikasi ke Telegram
 function sendTelegramNotification(website) {
