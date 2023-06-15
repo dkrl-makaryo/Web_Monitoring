@@ -1,0 +1,1 @@
+npm install http node-telegram-bot-api play-sound dotenv
